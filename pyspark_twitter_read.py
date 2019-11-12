@@ -4,7 +4,7 @@ downloaded as python file format from Jupyter notebook
 run this at command line with python3 command
 
 This script is for connectting to Twitter API thru the app registered in my Twitter developer account
-use socket to create Streamlistener at localhost (127.0.0.1) and port 5555 (or 5556, etc) to read tweets 
+use TCP socket to create Streamlistener at localhost (127.0.0.1) and port 5555 (or 5556, etc) to read tweets 
 
 '''
 
@@ -88,7 +88,7 @@ def sendData(c_socket):
     auth.set_access_token(access_token, access_secret)
 
     twitter_stream = Stream(auth, TweetsListener(c_socket))
-    twitter_stream.filter(track=['HongKong'])
+    twitter_stream.filter(track=['election'])
 
 
 # In[ ]:
